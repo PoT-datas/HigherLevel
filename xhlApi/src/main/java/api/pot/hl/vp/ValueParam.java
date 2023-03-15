@@ -10,6 +10,7 @@ public class ValueParam {
     public String label;
     public String value;
 
+    public int subId;
     public boolean autoEdit = false;
 
     public int icone = -1;
@@ -53,6 +54,11 @@ public class ValueParam {
 
     public ValueParam iconeRight(int iconeRight) {
         this.iconeRight = iconeRight;
+        return this;
+    }
+
+    public ValueParam subId(int subId) {
+        this.subId = subId;
         return this;
     }
 }
