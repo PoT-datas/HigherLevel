@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fafafa"
+    android:fitsSystemWindows="true"
+    tools:ignore="MissingPrefix">
+
+    <ImageView
+        android:id="@+id/userBackground"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userBackground_layout_height"
+        android:contentDescription="@string/clear"
+        android:src="@drawable/ic_user_background_first"
+        android:scaleType="fitXY" />
+
+    <api.pot.view.xl.XLayout
+        android:id="@+id/userPhotoXL"
+        android:layout_width="@dimen/userPhoto_layout_width"
+        android:layout_height="@dimen/userPhoto_layout_height"
+        android:background="#eeeeee"
+        app:xl_border_width="5dp"
+        app:xl_border_color="#eeeeee"
+        android:layout_below="@+id/userBackground"
+        android:layout_alignParentLeft="true"
+        app:xl_corner_rx="0.3"
+        app:xl_corner_ry="0.3"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="@dimen/userPhoto_layout_marginLeft"
+        android:layout_marginLeft="@dimen/userPhoto_layout_marginLeft"
+        android:layout_marginTop="@dimen/userPhoto_layout_marginTop">
+        <api.pot.gl.xiv.XImageView
+            android:id="@+id/userPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:xiv_enabled_circular_transformation="false"
+            app:xiv_bound_with_view_dimens="true"/>
+    </api.pot.view.xl.XLayout>
+
+    <api.pot.hl.xactivity.ui.RoundedImageView
+        android:id="@+id/userPhotoTwo"
+        android:layout_width="@dimen/userPhotoTwo_layout_width"
+        android:layout_height="@dimen/userPhotoTwo_layout_height"
+        android:layout_alignTop="@+id/userPhotoXL"
+        android:layout_marginRight="@dimen/userPhotoTwo_layout_marginRight"
+        android:layout_marginEnd="@dimen/userPhotoTwo_layout_marginRight"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <api.pot.hl.xactivity.ui.RoundedImageView
+        android:id="@+id/userPhotoTree"
+        android:layout_width="@dimen/userPhotoTree_layout_width"
+        android:layout_height="@dimen/userPhotoTree_layout_height"
+        android:layout_alignTop="@+id/userPhotoTwo"
+        android:layout_marginRight="@dimen/userPhotoTree_layout_marginRight"
+        android:layout_marginEnd="@dimen/userPhotoTree_layout_marginRight"
+        android:layout_toLeftOf="@+id/userPhotoTwo"
+        android:layout_toStartOf="@+id/userPhotoTwo" />
+
+    <LinearLayout
+        android:id="@+id/userData"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/userPhotoXL"
+        android:layout_height="@dimen/userData_layout_height"
+        android:layout_alignBottom="@+id/userBackground"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/userData_layout_marginBottom"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/userName"
+            fontPath="fonts/Roboto-Medium.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/userName_layout_marginLeft"
+            android:layout_marginLeft="@dimen/userName_layout_marginLeft"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/userName_textSize"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/userEmail"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/userEmail_layout_marginLeft"
+            android:layout_marginLeft="@dimen/userEmail_layout_marginLeft"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/userEmail_textSize" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_below="@+id/userBackground"
+        android:layout_width="match_parent"
+        android:layout_toRightOf="@+id/userPhotoXL"
+        android:layout_height="@dimen/userData_layout_height"
+        android:layout_marginTop="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/userName_layout_marginLeft"
+                    android:layout_marginLeft="@dimen/userName_layout_marginLeft"
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="120"/>
+
+                <TextView
+                    fontPath="fonts/Roboto-Regular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/userEmail_layout_marginLeft"
+                    android:layout_marginLeft="@dimen/userEmail_layout_marginLeft"
+                    android:textColor="#333333"
+                    android:text="Publications"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:background="#aaaaaa"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/userName_layout_marginLeft"
+                    android:layout_marginLeft="@dimen/userName_layout_marginLeft"
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="500"/>
+
+                <TextView
+                    fontPath="fonts/Roboto-Regular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/userEmail_layout_marginLeft"
+                    android:layout_marginLeft="@dimen/userEmail_layout_marginLeft"
+                    android:textColor="#333333"
+                    android:text="Arts"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:background="#aaaaaa"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/userName_layout_marginLeft"
+                    android:layout_marginLeft="@dimen/userName_layout_marginLeft"
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="5852"/>
+
+                <TextView
+                    fontPath="fonts/Roboto-Regular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/userEmail_layout_marginLeft"
+                    android:layout_marginLeft="@dimen/userEmail_layout_marginLeft"
+                    android:textColor="#333333"
+                    android:text="Thématiques"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+</RelativeLayout>
