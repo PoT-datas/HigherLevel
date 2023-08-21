@@ -21,12 +21,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 
 import java.io.File;
@@ -38,7 +36,6 @@ import api.pot.gl.xiv.tools.IndetProgress;
 import api.pot.hl.R;
 import api.pot.sound.WavRecorder;
 import api.pot.sound.WaveformView;
-import api.pot.system.XCast;
 import api.pot.text.xtv.XTextView;
 import api.pot.text.xtv.tools.FormattedText;
 import api.pot.text.xtv.tools.SmartTextCallback;
@@ -65,9 +62,8 @@ public class XPInputValue {
     private String defaultValue;
     private String titleValue = "Title";
     private String labelValue = "Label";
-    private Integer iconeValue;
+    private Integer iconeValueRes;
     private String iconeValuePath;
-    private int iconeResId = -1;
     private Bitmap iconeValueBitmap;
     private Integer closeValue;
     private String submitValue = "Valider";
@@ -98,9 +94,6 @@ public class XPInputValue {
     private XImageView close, check;
     ///
     private WaveformView waveformView;
-    ///
-    private CalendarView calendarView;
-    private ScrollView calendarSv;
 
     private PopupWindow popupWindow;
     private ValueAnimator progresser;
@@ -137,7 +130,7 @@ public class XPInputValue {
     }
 
     public XPInputValue icone(int resId){
-        this.iconeResId = resId;
+        this.iconeValueRes = resId;
         return xpInputValue;
     }
 
@@ -278,13 +271,10 @@ public class XPInputValue {
         waveformView = popupView.findViewById(R.id.waveformView);
         tongle = popupView.findViewById(R.id.tongle);
         //
-        calendarView = popupView.findViewById(R.id.calendarView);
-        calendarSv = popupView.findViewById(R.id.calendarSv);
-        //
         title.setText(titleValue);
-        if(iconeResId!=-1) icone.setImageResource(iconeResId);
-        else if(iconeValuePath!=null) icone.setImagePath(iconeValuePath);
-        else if(iconeValueBitmap!=null) icone.setImageBitmap(iconeValueBitmap);
+        if(iconeValuePath!=null) icone.setImagePath(iconeValuePath);
+        if(iconeValueBitmap!=null) icone.setImageBitmap(iconeValueBitmap);
+        if(iconeValueRes!=null) icone.setImageResource(iconeValueRes);
         //
         submit = popupView.findViewById(R.id.submit);
         //
@@ -321,39 +311,6 @@ public class XPInputValue {
         else if(pType==PType.CONFIRM) initConfirm();
         else if(pType==PType.CHECKING) initChecking();
         else if(pType==PType.SOUND) initSound();
-        else if(pType==PType.DATE) initDate();
-    }
-
-    private void initDate() {
-        ///
-        calendarSv.setVisibility(View.VISIBLE);
-        check.setVisibility(View.VISIBLE);
-        close.setVisibility(View.VISIBLE);
-        ///
-        check.setOnFgClickListener(new api.pot.gl.xiv.tools.Forgrounder.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                data = calendarView.getDate()+"";
-                popupWindow.dismiss();
-            }
-        });
-        close.setOnFgClickListener(new api.pot.gl.xiv.tools.Forgrounder.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                data = null;
-                popupWindow.dismiss();
-            }
-        });
-        ///
-        textInputTil.setVisibility(View.GONE);
-        codeArea.setVisibility(View.GONE);
-        resendCode.setVisibility(View.GONE);
-        spinner.setVisibility(View.GONE);
-        submit.setVisibility(View.GONE);
-        label.setVisibility(View.GONE);
-        ////------
-        initRec();
-        ////------
     }
 
     private boolean recMode = true;

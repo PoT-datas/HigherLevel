@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/mainInfos"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/access"
+        android:layout_toLeftOf="@+id/edit"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <api.pot.gl.xiv.XImageView
+            android:visibility="gone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:xiv_enabled_circular_transformation="false"
+            android:src="@drawable/ic_checker_vp"
+            android:text="Label"
+            style="@style/textLabel4"/>
+        <CheckBox
+            android:id="@+id/checker"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="Label"/>
+        <api.pot.text.xtv.XTextView
+            android:layout_marginLeft="10dp"
+            app:xtv_single_line="true"
+            android:id="@+id/label"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Label"
+            style="@style/textLabel4"/>
+    </LinearLayout>
+</RelativeLayout>

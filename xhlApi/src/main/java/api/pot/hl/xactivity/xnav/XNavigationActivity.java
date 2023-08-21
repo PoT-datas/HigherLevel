@@ -32,9 +32,13 @@ import api.pot.hl.xactivity.Model.XNavigation;
 import api.pot.hl.xactivity.adapter.XNAdapter;
 import api.pot.hl.xactivity.interfaces.OnItemClickListener;
 import api.pot.hl.xactivity.interfaces.OnPrepareOptionsMenu;
+import api.pot.system.Log;
 
 @SuppressLint("NewApi")
 public abstract class XNavigationActivity extends AppCompatActivity {
+
+    public TextView stat1Label, stat2Label, stat3Label;
+    public TextView stat1Value, stat2Value, stat3Value;
 
     public TextView userName;
     public TextView userEmail;
@@ -131,6 +135,13 @@ public abstract class XNavigationActivity extends AppCompatActivity {
         mRelativeDrawer = (ScrimInsetsFrameLayout) this.findViewById(R.id.relativeDrawer);
 
         this.setSupportActionBar(mToolbar);
+
+        mToolbar.getRootView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.g(XNavigationActivity.this, "toast");
+            }
+        });
 
         ActionBar actionBar = getSupportActionBar();
 
@@ -329,6 +340,21 @@ public abstract class XNavigationActivity extends AppCompatActivity {
         }
     }
 
+    public void stat1(String label, String count){
+        stat1Label.setText(label);
+        stat1Value.setText(count);
+    }
+
+    public void stat2(String label, String count){
+        stat2Label.setText(label);
+        stat2Value.setText(count);
+    }
+
+    public void stat3(String label, String count){
+        stat3Label.setText(label);
+        stat3Value.setText(count);
+    }
+
     private void createUserDefaultHeader() {
         mHeader = getLayoutInflater().inflate(R.layout.navigation_list_header_2, mList, false);
 
@@ -336,6 +362,14 @@ public abstract class XNavigationActivity extends AppCompatActivity {
         userEmail = (TextView) mHeader.findViewById(R.id.userEmail);
         userPhoto = (ImageView) mHeader.findViewById(R.id.userPhoto);
         userBackground = (ImageView) mHeader.findViewById(R.id.userBackground);
+
+        stat1Label = (TextView) mHeader.findViewById(R.id.stat1Label);
+        stat2Label = (TextView) mHeader.findViewById(R.id.stat2Label);
+        stat3Label = (TextView) mHeader.findViewById(R.id.stat3Label);
+        stat1Value = (TextView) mHeader.findViewById(R.id.stat1Value);
+        stat2Value = (TextView) mHeader.findViewById(R.id.stat2Value);
+        stat3Value = (TextView) mHeader.findViewById(R.id.stat3Value);
+
 
         /**mHeader = getLayoutInflater().inflate(R.layout.navigation_list_header, mList, false);
 

@@ -43,33 +43,28 @@ dependencies {
     //implementation 'com.github.PoT-datas:map:1.0.1'
     //implementation 'com.github.PoT-datas:DB:1.0.0'
     //implementation 'com.github.PoT-datas:Net:1.0.0'
-    ///---
-    implementation 'com.github.PoT-datas:System:1.0.2'
+    //------offline------
+    implementation 'com.github.PoT-datas:System:1.0.3'
+    implementation 'com.github.PoT-datas:Views:1.0.4'
+    implementation 'com.github.PoT-datas:Net:1.0.3'
+    ///
     implementation 'com.github.PoT-datas:Shooting:1.0.0'
     implementation 'com.github.PoT-datas:DB:1.0.2'
     implementation 'com.github.PoT-datas:gl:1.0.3'
-    implementation 'com.github.PoT-datas:Net:1.0.2'
     implementation 'com.github.PoT-datas:Text:1.0.3'
-    implementation 'com.github.PoT-datas:Views:1.0.3'
     implementation 'com.github.PoT-datas:Sound:1.0.1'
     //------offline------
-    /**implementation project(':glapi')
-    implementation project(':textapi')
-    implementation project(':viewapi')
+    /***implementation project(':glapi')
+     implementation project(':textapi')
+     implementation project(':viewapi')
+     implementation project(':systemapi')
+     implementation project(':mapapi')
+     implementation project(':dbapi')
+     implementation project(':soundapi')*//**
     implementation project(':systemapi')
-    implementation project(':netapi')
-    implementation project(':soundapi')*/
+    implementation project(':viewapi')
+    implementation project(':netapi')*/
+    //------------
+    /////implementation 'me.aflak.libraries:fingerprint:2.5.3'
     //------------
 }
-
-configurations.all {
-    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-        def requested = details.requested
-        if (requested.group == 'com.android.support') {
-            if (!requested.name.startsWith("multidex")) {
-                details.useVersion '25.3.0'
-            }
-        }
-    }
-}
-

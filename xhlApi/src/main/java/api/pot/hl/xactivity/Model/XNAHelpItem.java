@@ -42,7 +42,7 @@ public class XNAHelpItem implements Parcelable {
         this.setHeader(in.readByte() != 0);
     }
 
-    public static final Parcelable.Creator<XNAHelpItem> CREATOR = new Parcelable.Creator<XNAHelpItem>() {
+    public static final Creator<XNAHelpItem> CREATOR = new Creator<XNAHelpItem>() {
         public XNAHelpItem createFromParcel(Parcel source) {
             return new XNAHelpItem(source);
         }

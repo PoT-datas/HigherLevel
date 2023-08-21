@@ -5,6 +5,19 @@ import android.widget.CompoundButton;
 
 public class ValueParamCallback implements ValueParamListener{
     @Override
+    public void onPrinterUp(ValueParam valueParam) {
+    }
+
+    @Override
+    public void onPrinterDown(ValueParam valueParam) {
+    }
+
+    @Override
+    public ValueParamAdapter onParamChange(ValueParam valueParam) {
+        return null;
+    }
+
+    @Override
     public void onParamEditClick(View view) {
 
     }

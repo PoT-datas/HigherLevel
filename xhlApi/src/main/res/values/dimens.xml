@@ -11,6 +11,8 @@
     <dimen name="shadow_rad">5dp</dimen>
     <dimen name="shadow_padding">5dp</dimen>
 
+    <dimen name="square">5dp</dimen>
+
     <dimen name="text_outer_shadow_dx">0dp</dimen>
     <dimen name="text_outer_shadow_dy">2dp</dimen>
     <dimen name="text_outer_shadow_rad">2dp</dimen>
@@ -51,6 +53,8 @@
     <dimen name="map_marker_plot_height">40dp</dimen>
 
     <dimen name="app_tools_height">150dp</dimen>
+
+
 
     <!-- navigation_drawer.xml -->
     <dimen name="drawer_layout_width">320dp</dimen>

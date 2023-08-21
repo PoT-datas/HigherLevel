@@ -166,21 +166,6 @@
                         android:layout_height="50dp"
                         android:src="@drawable/ic_mic_none_black_24dp"/>
                 </RelativeLayout>
-                <ScrollView
-                    android:id="@+id/calendarSv"
-                    android:visibility="gone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:layout_centerHorizontal="true">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <CalendarView
-                            android:id="@+id/calendarView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                </ScrollView>
             </RelativeLayout>
 
             <RelativeLayout
