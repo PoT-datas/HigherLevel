@@ -44,9 +44,9 @@ dependencies {
     //implementation 'com.github.PoT-datas:DB:1.0.0'
     //implementation 'com.github.PoT-datas:Net:1.0.0'
     //------offline------
-    implementation 'com.github.PoT-datas:System:1.0.3'
+    implementation 'com.github.PoT-datas:System:1.0.4'
+     implementation 'com.github.PoT-datas:Net:1.0.4'
     implementation 'com.github.PoT-datas:Views:1.0.4'
-    implementation 'com.github.PoT-datas:Net:1.0.3'
     ///
     implementation 'com.github.PoT-datas:Shooting:1.0.0'
     implementation 'com.github.PoT-datas:DB:1.0.2'
@@ -54,7 +54,9 @@ dependencies {
     implementation 'com.github.PoT-datas:Text:1.0.3'
     implementation 'com.github.PoT-datas:Sound:1.0.1'
     //------offline------
-    /***implementation project(':glapi')
+    /**implementation project(':systemapi')
+    implementation project(':netapi')
+    implementation project(':glapi')
      implementation project(':textapi')
      implementation project(':viewapi')
      implementation project(':systemapi')
@@ -62,8 +64,7 @@ dependencies {
      implementation project(':dbapi')
      implementation project(':soundapi')*//**
     implementation project(':systemapi')
-    implementation project(':viewapi')
-    implementation project(':netapi')*/
+    implementation project(':viewapi')*/
     //------------
     /////implementation 'me.aflak.libraries:fingerprint:2.5.3'
     //------------

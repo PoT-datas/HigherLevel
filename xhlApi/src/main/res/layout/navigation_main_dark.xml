@@ -26,6 +26,13 @@
     app:statusBarBackground="?attr/colorPrimary"
     tools:ignore="MissingPrefix">
 
+    <FrameLayout
+        android:visibility="visible"
+        android:background="@color/colorError"
+        android:id="@+id/xnavContainerBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

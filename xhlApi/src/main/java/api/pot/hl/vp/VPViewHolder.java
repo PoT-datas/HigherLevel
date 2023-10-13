@@ -611,9 +611,12 @@ public class VPViewHolder extends RecyclerView.ViewHolder {
                     String s = inputText.getText().toString();
                     try {
                         if( (s.charAt(s.length()-1)=='\n') && valueParamListener!=null) {
-                            ValueParamAdapter adapter = valueParamListener.onParamChange(item);
-                            if(adapter!=null) adapter.notifyDataSetChanged();
                         }
+
+                        ValueParamAdapter adapter = valueParamListener.onParamChange(item);
+                        ////if(adapter!=null) adapter.notifyDataSetChanged();
+
+                        value.setText(item.value);
                     }catch (Exception e){}
                 }
             });

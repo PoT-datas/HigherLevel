@@ -61,7 +61,8 @@ public class VPChoiceAdapter extends RecyclerView.Adapter<VPChoiceAdapter.ViewHo
                 if(valueParam.onCheckedChanged(items, pos, b)) {
                     if(valueParamListener!=null) {
                         ValueParamAdapter adapter = valueParamListener.onParamChange(valueParam);
-                        try {
+                        notifyDataSetChanged();
+                        /**try {
                             adapter.notifyDataSetChanged();
                         }catch (Exception e){
                             try {
@@ -74,7 +75,7 @@ public class VPChoiceAdapter extends RecyclerView.Adapter<VPChoiceAdapter.ViewHo
                                     }
                                 });
                             }
-                        }
+                        }*/
                     }
                 }
             }

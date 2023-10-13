@@ -209,4 +209,12 @@ public class ValueParam {
         ret += "(Total = "+items.size()+")";
         return ret;
     }
+
+    public String describe() {
+        String ret = "";
+
+        ret = label+" : "+value;
+
+        return ret;
+    }
 }
